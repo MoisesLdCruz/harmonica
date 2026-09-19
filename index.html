@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="web_standard" name="shell-type" />
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main>:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script
+    id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-secondary-container": "#696360", "surface-dim": "#dbdad7", "outline": "#7f766a", "surface": "#fbf9f6", "surface-container-low": "#f5f3f0", "on-secondary-fixed": "#1f1b19", "on-surface-variant": "#4d463b", "background": "#fbf9f6", "on-primary-container": "#523d1b", "inverse-primary": "#e1c295", "primary": "#725a36", "tertiary-fixed-dim": "#d3c3bc", "on-secondary-fixed-variant": "#4b4643", "on-tertiary-container": "#493f39", "surface-variant": "#e4e2df", "surface-container": "#efeeeb", "secondary-fixed": "#eae1dd", "tertiary-container": "#b8aaa3", "on-primary-fixed-variant": "#594321", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "primary-container": "#c6a87d", "on-background": "#1b1c1a", "inverse-on-surface": "#f2f0ed", "surface-container-high": "#eae8e5", "tertiary-fixed": "#efdfd7", "error": "#ba1a1a", "secondary": "#635d5b", "on-error": "#ffffff", "error-container": "#ffdad6", "on-tertiary-fixed-variant": "#4f453f", "inverse-surface": "#30312f", "on-tertiary-fixed": "#221a15", "surface-bright": "#fbf9f6", "surface-container-highest": "#e4e2df", "on-surface": "#1b1c1a", "primary-fixed-dim": "#e1c295", "surface-tint": "#725a36", "on-primary-fixed": "#281800", "primary-fixed": "#ffddaf", "tertiary": "#675c56", "on-secondary": "#ffffff", "on-error-container": "#93000a", "secondary-fixed-dim": "#cdc5c1", "outline-variant": "#d1c5b7", "secondary-container": "#eae1dd"}, borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"}, spacing: {"space-lg": "2rem", "space-md": "1.25rem", "margin": "3rem", "space-xs": "0.375rem", "space-sm": "0.75rem", "margin-mobile": "1.25rem", "gutter-mobile": "1rem", "gutter": "1.5rem", "space-xl": "3.5rem"}, fontFamily: {"title-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Playfair Display"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "headline-md": ["Playfair Display"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "display-lg": ["Playfair Display"], "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Playfair Display"]}, fontSize: {"title-lg": ["18px", {"lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "400"}], "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}], "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "400"}], "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "500"}], "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}], "label-md": ["11px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}], "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "400"}], "label-lg": ["13px", {"lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}], "display-lg": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "400"}], "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}], "headline-sm": ["22px", {"lineHeight": "30px", "fontWeight": "500"}]}}}}</script>
+  <style>
+    :root {
+      --hz-gold: #c6a87d;
+      --hz-gold-dark: #725a36;
+      --hz-ink: #1b1c1a;
+      --hz-cream: #fbf9f6;
+      --hz-line: rgba(114, 90, 54, .18)
+    }
+
+    .hz-header {
+      z-index: 1030;
+      background: rgba(251, 249, 246, .94);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--hz-line);
+      transition: box-shadow .3s ease, background .3s ease
+    }
+
+    .hz-navbar {
+      min-height: 86px;
+      padding: 8px 0
+    }
+
+    .hz-header-inner {
+      min-height: 70px;
+      padding-left: clamp(18px, 4vw, 56px);
+      padding-right: clamp(18px, 4vw, 56px)
+    }
+
+    .hz-logo-wrap {
+      display: flex;
+      align-items: center;
+      width: 220px;
+      max-width: 28vw;
+      padding: 0;
+      margin: 0
+    }
+
+    .hz-logo {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 68px;
+      object-fit: contain;
+      object-position: left center
+    }
+
+    .hz-phrase-carousel {
+      flex: 1;
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+      min-height: 34px
+    }
+
+    .hz-phrase-carousel .carousel-item {
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px
+    }
+
+    .hz-phrase-carousel span {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 1.3vw, 19px);
+      font-style: italic;
+      color: var(--hz-gold-dark);
+      letter-spacing: .01em
+    }
+
+    .hz-phrase-carousel .carousel-item:not(.active) {
+      display: none
+    }
+
+    .hz-header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 20px;
+      border: 1px solid var(--hz-ink);
+      background: var(--hz-ink);
+      color: #fff;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font: 600 11px/1 'Plus Jakarta Sans', sans-serif;
+      white-space: nowrap;
+      transition: all .25s ease
+    }
+
+    .hz-header-cta:hover {
+      background: var(--hz-gold);
+      border-color: var(--hz-gold);
+      color: var(--hz-ink)
+    }
+
+    .hz-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 14px;
+      border: 1px solid rgba(114, 90, 54, .35);
+      background: transparent;
+      color: var(--hz-ink);
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font: 600 10px/1 'Plus Jakarta Sans', sans-serif;
+      transition: all .25s ease
+    }
+
+    .hz-menu-btn:hover {
+      border-color: var(--hz-gold);
+      color: var(--hz-gold-dark)
+    }
+
+    .hz-menu-lines {
+      width: 21px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px
+    }
+
+    .hz-menu-lines i {
+      display: block;
+      height: 1px;
+      background: currentColor
+    }
+
+    .hz-menu-lines i:nth-child(2) {
+      width: 14px;
+      margin-left: auto;
+      background: var(--hz-gold)
+    }
+
+    .hz-offcanvas {
+      --bs-offcanvas-width: min(480px, 92vw);
+      background: var(--hz-cream);
+      border-left: 1px solid var(--hz-line)
+    }
+
+    .hz-offcanvas-header {
+      padding: 30px 32px 22px;
+      border-bottom: 1px solid var(--hz-line)
+    }
+
+    .hz-offcanvas-kicker {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font: 600 9px/1 'Plus Jakarta Sans', sans-serif;
+      color: var(--hz-gold-dark);
+      margin-bottom: 7px
+    }
+
+    .hz-offcanvas-header h2 {
+      font: 400 30px/1 'Playfair Display', serif;
+      color: var(--hz-ink)
+    }
+
+    .hz-close {
+      opacity: .65
+    }
+
+    .hz-close:focus {
+      box-shadow: none
+    }
+
+    .hz-offcanvas .offcanvas-body {
+      padding: 18px 32px 28px
+    }
+
+    .hz-offcanvas-nav {
+      display: flex;
+      flex-direction: column
+    }
+
+    .hz-offcanvas-nav a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 4px;
+      border-bottom: 1px solid rgba(114, 90, 54, .12);
+      color: var(--hz-ink);
+      text-decoration: none;
+      transition: padding .2s ease, color .2s ease
+    }
+
+    .hz-offcanvas-nav a span {
+      font: 400 20px/1.25 'Playfair Display', serif
+    }
+
+    .hz-offcanvas-nav a small {
+      font: 600 9px/1 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: .14em;
+      color: #8b8378
+    }
+
+    .hz-offcanvas-nav a:hover {
+      padding-left: 10px;
+      color: var(--hz-gold-dark)
+    }
+
+    .hz-offcanvas-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 20px;
+      background: var(--hz-ink);
+      color: #fff;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font: 600 10px/1 'Plus Jakarta Sans', sans-serif;
+      transition: all .25s ease
+    }
+
+    .hz-offcanvas-cta:hover {
+      background: var(--hz-gold);
+      color: var(--hz-ink)
+    }
+
+    .hz-offcanvas-info {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      color: #6d665d;
+      font: 400 11px/1.5 'Plus Jakarta Sans', sans-serif
+    }
+
+    /* Hero refinement: no location/category badge */
+    #inicio {
+      scroll-margin-top: 86px
+    }
+
+    @media(max-width:991.98px) {
+      .hz-logo-wrap {
+        width: 180px;
+        max-width: 46vw
+      }
+
+      .hz-logo {
+        max-height: 58px
+      }
+
+      .hz-navbar {
+        min-height: 74px
+      }
+
+      .hz-header-inner {
+        min-height: 60px
+      }
+
+      .hz-header-cta {
+        min-height: 42px;
+        padding: 0 13px;
+        font-size: 9px
+      }
+
+      .hz-menu-btn {
+        min-height: 42px;
+        padding: 0 11px
+      }
+
+      .hz-menu-label {
+        display: none
+      }
+    }
+
+    @media(max-width:575.98px) {
+      .hz-logo-wrap {
+        width: 145px
+      }
+
+      .hz-header-cta {
+        padding: 0 11px;
+        letter-spacing: .07em
+      }
+
+      .hz-menu-lines {
+        width: 19px
+      }
+
+      .hz-navbar {
+        padding: 5px 0
+      }
+    }
+
+    .hz-header.hz-scrolled {
+      box-shadow: 0 8px 30px rgba(27, 28, 26, .07)
+    }
+
+    /* Harmônica theme override: neutralize Bootstrap default blue links */
+    :root {
+      --bs-primary: #725a36;
+      --bs-primary-rgb: 114, 90, 54;
+      --bs-link-color: #725a36;
+      --bs-link-color-rgb: 114, 90, 54;
+      --bs-link-hover-color: #c6a87d;
+      --bs-link-hover-color-rgb: 198, 168, 125;
+      --bs-focus-ring-color: rgba(198, 168, 125, .25);
+    }
+
+    body a {
+      color: inherit;
+    }
+
+    body a:hover {
+      color: var(--hz-gold-dark);
+    }
+
+    .navbar-brand,
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+      color: inherit;
+    }
+
+    .hz-offcanvas-nav a,
+    .hz-offcanvas-nav a:hover {
+      color: var(--hz-ink);
+    }
+
+    .hz-offcanvas-nav a:hover {
+      color: var(--hz-gold-dark);
+    }
+
+    .hz-offcanvas-cta,
+    .hz-offcanvas-cta:hover,
+    .hz-header-cta,
+    .hz-header-cta:hover {
+      color: #fff;
+    }
+
+    .hz-header-cta:hover {
+      color: var(--hz-ink);
+    }
+  </style>
+</head>
+
+<body class="bg-background font-body-md text-on-surface antialiased">
+  <!-- HEADER — Bootstrap 5 -->
+  <header class="hz-header fixed-top">
+    <nav class="navbar hz-navbar navbar-expand-lg">
+      <div class="container-fluid hz-header-inner">
+        <a class="navbar-brand hz-logo-wrap" href="#inicio" aria-label="Harmônica Estética Avançada">
+          <img src="assets/logo-harmonica.png.png" class="hz-logo" alt="Harmônica Estética Avançada">
+        </a>
+
+        <!-- Self-esteem phrase slider -->
+        <div id="hzPhraseCarousel" class="carousel slide hz-phrase-carousel d-none d-lg-block" data-bs-ride="carousel"
+          data-bs-interval="4200" aria-label="Frases da Harmônica">
+          <div class="carousel-inner">
+            <div class="carousel-item active"><span>Realce sua beleza sem deixar de ser você.</span></div>
+            <div class="carousel-item"><span>Você merece se olhar com carinho.</span></div>
+            <div class="carousel-item"><span>Cuidar de si também é se valorizar.</span></div>
+            <div class="carousel-item"><span>Sua beleza tem história. Sua autoestima também.</span></div>
+            <div class="carousel-item"><span>Sentir-se bem também faz parte da beleza.</span></div>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 gap-md-3 ms-auto">
+          <a href="https://wa.me/5512997428810?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Harm%C3%B4nica."
+            target="_blank" rel="noopener" class="hz-header-cta text-decoration-none">Agendar avaliação</a>
+          <button class="hz-menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#hzOffcanvas"
+            aria-controls="hzOffcanvas" aria-label="Abrir menu">
+            <span class="hz-menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="hz-menu-label">Menu</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MENU LATERAL — Bootstrap Offcanvas -->
+  <div class="offcanvas offcanvas-end hz-offcanvas" tabindex="-1" id="hzOffcanvas" aria-labelledby="hzOffcanvasLabel">
+    <div class="offcanvas-header hz-offcanvas-header">
+      <div>
+        <span class="hz-offcanvas-kicker">Navegação</span>
+        <h2 class="offcanvas-title" id="hzOffcanvasLabel">Harmônica</h2>
+      </div>
+      <button type="button" class="btn-close hz-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <nav class="hz-offcanvas-nav" aria-label="Menu principal">
+        <a href="#inicio" data-bs-dismiss="offcanvas"><span>Início</span><small>01</small></a>
+        <a href="#sobre" data-bs-dismiss="offcanvas"><span>A Harmônica</span><small>02</small></a>
+        <a href="#diferenciais" data-bs-dismiss="offcanvas"><span>Filosofia &amp; Rigor</span><small>03</small></a>
+        <a href="#procedimentos" data-bs-dismiss="offcanvas"><span>Procedimentos</span><small>04</small></a>
+        <a href="#destaque" data-bs-dismiss="offcanvas"><span>Harmonização Individualizada</span><small>05</small></a>
+        <a href="#especialista" data-bs-dismiss="offcanvas"><span>Especialistas</span><small>06</small></a>
+        <a href="#resultados" data-bs-dismiss="offcanvas"><span>Resultados Clínicos</span><small>07</small></a>
+        <a href="#depoimentos" data-bs-dismiss="offcanvas"><span>Depoimentos</span><small>08</small></a>
+        <a href="#jornada" data-bs-dismiss="offcanvas"><span>Jornada da Paciente</span><small>09</small></a>
+        <a href="#blog" data-bs-dismiss="offcanvas"><span>Conhecimento &amp; Conteúdo</span><small>10</small></a>
+        <a href="#faq" data-bs-dismiss="offcanvas"><span>Dúvidas Frequentes</span><small>11</small></a>
+        <a href="#contato" data-bs-dismiss="offcanvas"><span>Localização &amp; Contato</span><small>12</small></a>
+      </nav>
+      <div class="mt-auto pt-4">
+        <a href="https://wa.me/5512997428810?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Harm%C3%B4nica."
+          target="_blank" rel="noopener" class="hz-offcanvas-cta text-decoration-none">Agendar avaliação pelo
+          WhatsApp</a>
+        <div class="hz-offcanvas-info mt-4">
+          <div>Av. Brasil, 420 · Centro, Caçapava - SP</div>
+          <div>(12) 3652-9100 · (12) 99742-8810</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main class="w-full pt-20 bg-background">
+    <div class="flex flex-col w-full">
+      <!-- 02. Hero — Vídeo & Visual Imersivo -->
+      <section
+        class="relative w-full -mt-20 pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]"
+        id="inicio">
+        <div class="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-1000 scale-105"
+          style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g');">
+        </div>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-on-background/85 via-on-background/65 to-transparent z-10 backdrop-blur-[1px]">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-10"></div>
+        <div
+          class="relative z-20 max-w-[1280px] w-full mx-auto px-margin-mobile lg:px-margin flex flex-col justify-center">
+          <div class="max-w-2xl flex flex-col items-start gap-space-sm">
+            <!-- Headline -->
+            <h1 class="font-headline-lg lg:font-display-lg text-surface tracking-tight mt-2 text-balance leading-tight">
+              Sua beleza em harmonia.
+            </h1>
+            <!-- Conceptual Paragraph -->
+            <p class="font-body-lg text-surface-variant/90 max-w-xl text-balance leading-relaxed">
+              Procedimentos médicos faciais com rigor técnico, personalização absoluta e preservação genuína da sua
+              identidade. O encontro entre ciência dermatológica e proporção áurea.
+            </p>
+            <!-- CTAs -->
+            <div class="flex flex-wrap items-center gap-space-sm mt-4">
+              <a class="inline-flex items-center justify-center gap-2 px-8 h-12 rounded bg-primary-container text-on-background font-label-lg text-label-lg uppercase tracking-wider hover:bg-surface hover:text-on-surface transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.25)]"
+                href="#agendamento">
+                <span class="material-symbols-outlined text-lg">calendar_today</span>
+                Agendar Avaliação
+              </a>
+              <a class="inline-flex items-center justify-center gap-2 px-6 h-12 rounded bg-surface/10 backdrop-blur-md text-surface font-label-lg text-label-lg uppercase tracking-wider hover:bg-surface/20 transition-all duration-300"
+                href="#sobre">
+                Conhecer a Harmônica
+                <span class="material-symbols-outlined text-lg">arrow_forward</span>
+              </a>
+            </div>
+            <!-- Play Film Mini Badge -->
+            <button
+              class="group flex items-center gap-3 mt-4 text-surface/80 hover:text-primary-container transition-colors"
+              onclick="document.getElementById('video-modal').classList.remove('hidden')" type="button">
+              <span
+                class="w-10 h-10 rounded-full bg-surface/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform text-surface">
+                <span class="material-symbols-outlined text-xl"
+                  style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+              </span>
+              <span class="font-label-md text-label-md uppercase tracking-wider">Assista ao filme da clínica
+                (1:45)</span>
+            </button>
+            <!-- Trust Indicators Bar -->
+            <div
+              class="pt-8 mt-6 flex flex-wrap items-center gap-x-8 gap-y-3 text-surface-variant/80 font-body-sm text-body-sm">
+              <div class="flex items-center gap-2">
+                <div class="flex text-primary-fixed">
+                  <span class="material-symbols-outlined text-base"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-base"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-base"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-base"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-base"
+                    style="font-variation-settings: 'FILL' 1;">star</span>
+                </div>
+                <span class="text-surface font-semibold">Nota 5.0 Google</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                <span>Atendimento 100% individualizado</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+                <span>Ambiente privativo e acolhedor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Video Modal -->
+      <div class="fixed inset-0 z-50 hidden bg-on-background/80 backdrop-blur-md flex items-center justify-center p-4"
+        id="video-modal">
+        <div class="relative w-full max-w-3xl bg-surface-container-lowest rounded p-space-md shadow-2xl flex flex-col">
+          <div class="flex items-center justify-between pb-4">
+            <span class="font-headline-sm text-headline-sm text-on-surface">Experiência Harmônica</span>
+            <button class="p-2 rounded-full hover:bg-surface-container text-on-surface-variant"
+              onclick="document.getElementById('video-modal').classList.add('hidden')" type="button">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+          <div
+            class="aspect-video w-full bg-surface-container-high rounded overflow-hidden relative flex items-center justify-center">
+            <img alt="Ambiente da Clínica Harmônica" class="w-full h-full object-cover opacity-75"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g" />
+            <div
+              class="absolute inset-0 bg-on-background/40 flex flex-col items-center justify-center gap-3 text-surface">
+              <div
+                class="w-16 h-16 rounded-full bg-primary-container/90 flex items-center justify-center text-on-background shadow-lg">
+                <span class="material-symbols-outlined text-3xl"
+                  style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+              </div>
+              <span class="font-label-lg text-label-lg tracking-widest uppercase">Vídeo Institucional de Alta
+                Definição</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 03. A Harmônica (Editorial & Purpose) -->
+      <section class="py-space-xl bg-background" id="sobre">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="lg:col-span-5 flex flex-col gap-space-sm">
+              <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Sobre o Instituto</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+                Beleza com propósito, técnica e harmonia.
+              </h2>
+              <div class="w-12 h-0.5 bg-primary-container my-1"></div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Na Harmônica, compreendemos que a face humana não aceita padronizações. Afastamo-nos do conceito de
+                procedimentos em massa para adotar uma curadoria biomédica e dermatológica singular, pautada na
+                proporção de cada traço e na arquitetura óssea individual.
+              </p>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Nossa missão é resgatar o frescor do tempo, conferindo segurança e elegância através de substâncias
+                nobres e intervenções milimétricas, desenhadas especificamente para elevar a sua autoestima com
+                discrição total.
+              </p>
+              <div class="mt-4 p-space-md bg-surface-container-low rounded">
+                <p class="font-headline-sm italic text-on-surface leading-snug">
+                  "A verdadeira excelência em estética avançada não é percebida como uma intervenção, mas sentida como
+                  um repouso sublime da alma."
+                </p>
+                <div class="mt-space-xs flex items-center justify-between text-on-surface-variant">
+                  <span class="font-label-lg text-label-lg tracking-wider text-primary uppercase">Diretoria Médica
+                    Harmônica</span>
+                  <span class="font-body-sm text-body-sm">Caçapava · SP</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-7 relative">
+              <div class="relative overflow-hidden rounded shadow-xl aspect-[16/11]">
+                <img alt="Recepção refinada e acolhedora da Clínica Harmônica"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g" />
+                <div class="absolute inset-0 bg-gradient-to-t from-on-background/40 to-transparent"></div>
+              </div>
+              <div
+                class="hidden sm:block absolute -bottom-6 -left-6 p-space-md bg-surface-container-lowest rounded shadow-xl max-w-xs">
+                <div class="flex items-center gap-3">
+                  <span class="material-symbols-outlined text-primary text-3xl">spa</span>
+                  <div>
+                    <span class="block font-title-md text-title-md text-on-surface">Design Sensorial</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Música ambiente, aromaterapia e
+                      isolamento acústico para total tranquilidade.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 04. Filosofia / 4 Diferenciais -->
+      <section class="py-space-xl bg-surface-container-low" id="diferenciais">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col items-center text-center max-w-xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Nossa Essência</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+              Quatro pilares de rigor e serenidade
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Cada detalhe de nossa metodologia foi desenvolvido para transformar o cuidado estético em um ato de saúde,
+              precisão e respeito biológico.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <!-- Card 1 -->
+            <div
+              class="bg-surface-container-lowest p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-primary-container font-light">01</span>
+                <h3 class="font-title-lg text-title-lg text-on-surface mt-space-xs">Personalização</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Mapeamento anatômico milimétrico. Desenvolvemos planos de tratamento adaptados estritamente à sua
+                  genética e estilo de vida.
+                </p>
+              </div>
+              <div
+                class="mt-space-md pt-space-xs text-primary font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+                <span>Anatomia Única</span>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="bg-surface-container-lowest p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-primary-container font-light">02</span>
+                <h3 class="font-title-lg text-title-lg text-on-surface mt-space-xs">Naturalidade</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Sem exageros ou estereótipos. Realçamos contornos, sustentação e luminosidade com total
+                  indetectabilidade social.
+                </p>
+              </div>
+              <div
+                class="mt-space-md pt-space-xs text-primary font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+                <span>Preservação Real</span>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="bg-surface-container-lowest p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-primary-container font-light">03</span>
+                <h3 class="font-title-lg text-title-lg text-on-surface mt-space-xs">Segurança</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Protocolos de biossegurança de padrão cirúrgico, insumos certificados pela Anvisa/FDA e monitoramento
+                  rigoroso contínuo.
+                </p>
+              </div>
+              <div
+                class="mt-space-md pt-space-xs text-primary font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+                <span>Rigor Clínico</span>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="bg-surface-container-lowest p-space-lg rounded shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+              <div>
+                <span class="font-headline-lg text-headline-lg text-primary-container font-light">04</span>
+                <h3 class="font-title-lg text-title-lg text-on-surface mt-space-xs">Tecnologia</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Aparelhos de ponta e bioestimuladores de última geração para indução natural e profunda de
+                  neocolagênese tecidual.
+                </p>
+              </div>
+              <div
+                class="mt-space-md pt-space-xs text-primary font-label-md text-label-md uppercase tracking-wider flex items-center gap-1">
+                <span>Vanguarda Dérmica</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 05. Procedimentos -->
+      <section class="py-space-xl bg-background" id="procedimentos">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+            <div>
+              <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Protocolos de Alta
+                Performance</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+                Procedimentos pensados para você.
+              </h2>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+              Soluções científicas desenvolvidas para tratar o envelhecimento funcional de maneira progressiva,
+              harmônica e suave.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            <!-- Proc 1 -->
+            <div
+              class="group bg-surface-container-lowest rounded p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-surface-container text-primary font-label-md text-label-md uppercase rounded">Face
+                    Total</span>
+                  <span
+                    class="material-symbols-outlined text-primary-container text-2xl group-hover:translate-x-1 transition-transform">flare</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Harmonização Facial</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Equilíbrio cirurgicamente planejado dos ângulos faciais, valorizando a mandíbula, malar e queixo sem
+                  perder a autenticidade dos seus traços.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 flex items-center justify-between">
+                <span
+                  class="font-label-lg text-label-lg text-primary tracking-wider uppercase group-hover:underline">Saiba
+                  mais →</span>
+                <span class="font-body-sm text-body-sm text-outline">Sessão: 60 min</span>
+              </div>
+            </div>
+            <!-- Proc 2 -->
+            <div
+              class="group bg-surface-container-lowest rounded p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-surface-container text-primary font-label-md text-label-md uppercase rounded">Prevenção</span>
+                  <span
+                    class="material-symbols-outlined text-primary-container text-2xl group-hover:translate-x-1 transition-transform">auto_fix_high</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Toxina Botulínica</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Relaxamento muscular preciso e preventivo de rugas dinâmicas da testa, pés de galinha e glabela,
+                  mantendo a expressividade viva e descansada.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 flex items-center justify-between">
+                <span
+                  class="font-label-lg text-label-lg text-primary tracking-wider uppercase group-hover:underline">Saiba
+                  mais →</span>
+                <span class="font-body-sm text-body-sm text-outline">Sessão: 30 min</span>
+              </div>
+            </div>
+            <!-- Proc 3 -->
+            <div
+              class="group bg-surface-container-lowest rounded p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-surface-container text-primary font-label-md text-label-md uppercase rounded">Sustentação</span>
+                  <span
+                    class="material-symbols-outlined text-primary-container text-2xl group-hover:translate-x-1 transition-transform">water_drop</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Ácido Hialurônico</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Reposição de coxins de gordura perdidos, refinamento labial e atenuação do sulco nasogeniano com géis
+                  reológicos de altíssima coesividade.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 flex items-center justify-between">
+                <span
+                  class="font-label-lg text-label-lg text-primary tracking-wider uppercase group-hover:underline">Saiba
+                  mais →</span>
+                <span class="font-body-sm text-body-sm text-outline">Sessão: 45 min</span>
+              </div>
+            </div>
+            <!-- Proc 4 -->
+            <div
+              class="group bg-surface-container-lowest rounded p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-surface-container text-primary font-label-md text-label-md uppercase rounded">Colágeno</span>
+                  <span
+                    class="material-symbols-outlined text-primary-container text-2xl group-hover:translate-x-1 transition-transform">grain</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Bioestimuladores</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Estimulação celular com hidroxiapatita de cálcio e ácido poli-L-lático para restaurar a firmeza,
+                  elasticidade e densidade profunda da pele.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 flex items-center justify-between">
+                <span
+                  class="font-label-lg text-label-lg text-primary tracking-wider uppercase group-hover:underline">Saiba
+                  mais →</span>
+                <span class="font-body-sm text-body-sm text-outline">Efeito: até 24 meses</span>
+              </div>
+            </div>
+            <!-- Proc 5 -->
+            <div
+              class="group bg-surface-container-lowest rounded p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-surface-container text-primary font-label-md text-label-md uppercase rounded">Textura
+                    &amp; Tom</span>
+                  <span
+                    class="material-symbols-outlined text-primary-container text-2xl group-hover:translate-x-1 transition-transform">tonality</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Tratamentos Faciais</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Peelings químicos médicos, microagulhamento robótico e drug delivery para manchas, poros dilatados e
+                  revitalização profunda de viço dérmico.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 flex items-center justify-between">
+                <span
+                  class="font-label-lg text-label-lg text-primary tracking-wider uppercase group-hover:underline">Saiba
+                  mais →</span>
+                <span class="font-body-sm text-body-sm text-outline">Sessão: 50 min</span>
+              </div>
+            </div>
+            <!-- Proc 6 -->
+            <div
+              class="group bg-surface-container-lowest rounded p-space-lg shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-surface-container text-primary font-label-md text-label-md uppercase rounded">Corporal</span>
+                  <span
+                    class="material-symbols-outlined text-primary-container text-2xl group-hover:translate-x-1 transition-transform">accessibility_new</span>
+                </div>
+                <h3 class="font-headline-sm text-headline-sm text-on-surface">Contorno &amp; Firmeza</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                  Protocolos combinados para glúteos, pescoço, colo e braços, tratando flacidez cutânea e gordura
+                  localizada com alto refinamento anatômico.
+                </p>
+              </div>
+              <div class="mt-6 pt-4 flex items-center justify-between">
+                <span
+                  class="font-label-lg text-label-lg text-primary tracking-wider uppercase group-hover:underline">Saiba
+                  mais →</span>
+                <span class="font-body-sm text-body-sm text-outline">Personalizado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 06. Destaque de Procedimento (Editorial Highlight) -->
+      <section class="py-space-xl bg-surface-container" id="destaque">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div
+            class="bg-surface-container-lowest rounded shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            <div class="lg:col-span-6 relative min-h-[380px] lg:min-h-full">
+              <img alt="Procedimento delicado e avaliação de contorno facial na clínica Harmônica"
+                class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQK5My7gdIZjrDMx9mdc67mKrePPCqFWPGvtfJEKLXlgVK1nfqA_rdG-CviVF14DNYq6PwP4f4N0s-ih66yf9nN4Hjurjem4d9cJ_O9OqlohNjlffjgj2NAy0XPRj8HcY07qp4UYfIgVPpHxCbBvtMACZlEFxdWznZiG2rCG9v2xOf7uKQmyaeFidoHtkCiKIannbAbdJs7ww7KthIAcEaPed8eruF02H_bZHkefNRhimEI2Tc1aPrqw" />
+              <div class="absolute inset-0 bg-gradient-to-t from-on-background/30 via-transparent to-transparent"></div>
+              <div
+                class="absolute bottom-6 left-6 px-4 py-2 bg-surface/90 backdrop-blur-md rounded text-on-surface font-body-sm text-body-sm">
+                Técnica Exclusiva · Micro-vetorização
+              </div>
+            </div>
+            <div class="lg:col-span-6 p-space-lg lg:p-space-xl flex flex-col justify-center gap-space-sm">
+              <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Protocolo
+                Signature</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+                Harmonização Facial Individualizada
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Muito além de preencher, nossa harmonização busca entender como a luz incide sobre sua estrutura óssea
+                ao sorrir, falar e repousar. O resultado é o rejuvenescimento elegante de quem parece ter acabado de
+                retornar de férias restauradoras.
+              </p>
+              <div class="flex flex-col gap-3 my-2">
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary mt-0.5 shrink-0">
+                    <span class="material-symbols-outlined text-sm">check</span>
+                  </div>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Mapeamento Fotográfico &amp;
+                      Dinâmico 3D</strong>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Estudo dos vetores de tração
+                      muscular e pontos de luz anatômicos.</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary mt-0.5 shrink-0">
+                    <span class="material-symbols-outlined text-sm">check</span>
+                  </div>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Dosagens
+                      Micro-milimétricas</strong>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Uso calibrado de produtos para
+                      conferir efeito lifting sem volume artificial.</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div
+                    class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center text-primary mt-0.5 shrink-0">
+                    <span class="material-symbols-outlined text-sm">check</span>
+                  </div>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Acompanhamento Pós-Sessão
+                      Contínuo</strong>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Consulta de revisão inclusa com
+                      reavaliação de simetria e estabilização.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-4">
+                <a class="inline-flex items-center justify-center px-8 h-12 rounded bg-on-background text-surface font-label-lg text-label-lg uppercase tracking-wider hover:bg-primary transition-all duration-300"
+                  href="#agendamento">
+                  Quero conhecer o protocolo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 07. Especialistas -->
+      <section class="py-space-xl bg-background" id="especialista">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div class="lg:col-span-5 order-2 lg:order-1 flex flex-col gap-space-sm">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded text-on-surface-variant font-label-md text-label-md uppercase tracking-wider w-fit">
+                Corpo Clínico Especializado
+              </div>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+                Dra. Carolina Meirelles
+              </h2>
+              <span class="font-title-md text-title-md text-primary font-medium">Médica Dermatologista · Especialista em
+                Estética Facial Avançada</span>
+              <div class="flex items-center gap-4 py-1 text-on-surface-variant font-body-sm text-body-sm">
+                <span class="px-2.5 py-1 bg-surface-container rounded">CRM/SP 148.920</span>
+                <span class="px-2.5 py-1 bg-surface-container rounded">RQE 68.214</span>
+                <span class="flex items-center gap-1"><span
+                    class="material-symbols-outlined text-primary text-base">verified</span> CFM Conforme</span>
+              </div>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Com mais de uma década dedicada à dermatologia regenerativa e graduada pelas principais instituições
+                médicas de São Paulo, a Dra. Carolina desenvolveu a abordagem da clínica com foco estrito em anatomia
+                tridimensional, elegância e longevidade cutânea.
+              </p>
+              <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Sua filosofia parte do princípio de que intervir na face é uma responsabilidade médica primária, onde o
+                diálogo aberto e a prudência clínica superam qualquer modismo passageiro.
+              </p>
+              <div class="grid grid-cols-2 gap-space-sm pt-2">
+                <div class="p-3 bg-surface-container-low rounded">
+                  <span class="block font-title-md text-title-md text-on-surface">+3.500</span>
+                  <span class="font-body-sm text-body-sm text-outline">Faces tratadas com precisão</span>
+                </div>
+                <div class="p-3 bg-surface-container-low rounded">
+                  <span class="block font-title-md text-title-md text-on-surface">100%</span>
+                  <span class="font-body-sm text-body-sm text-outline">Foco em traços naturais</span>
+                </div>
+              </div>
+              <div class="pt-4">
+                <a class="inline-flex items-center justify-center gap-2 px-6 h-12 rounded bg-surface-container-highest text-on-surface hover:bg-on-surface hover:text-surface font-label-lg text-label-lg uppercase tracking-wider transition-colors"
+                  href="#agendamento">
+                  Conheça a Especialista
+                  <span class="material-symbols-outlined text-lg">calendar_month</span>
+                </a>
+              </div>
+            </div>
+            <div class="lg:col-span-7 order-1 lg:order-2 flex justify-center">
+              <div class="relative w-full max-w-md aspect-[4/5] rounded overflow-hidden shadow-2xl">
+                <img alt="Dra. Carolina Meirelles examinando com espelho de mão o contorno da face na clínica"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2AANCqoqrv8qSnIJOgUSo3AzqiKSeeGXPqA4RLAKsQ9JGrnaV-GxwvIDl5MOEguu8Ov2PGcfm-DK3abPIM6xRQYFeL8SrmtvmGgVJmow8t-tRPqrRSF-xo-ksol4E8UV6hWzyfiwrSTbf23YSH6GQtH8v6MOd_2uP-o4XA4mdObfvmiRITKeLIGpx8S-jfFM89MbVJD0N0ZgGn4dzAF478rnrmJQ0F11nV3eLOTRbKWaPhCuI9Nq_w" />
+                <div class="absolute inset-0 bg-gradient-to-t from-on-background/50 via-transparent to-transparent">
+                </div>
+                <div class="absolute bottom-6 left-6 right-6 text-surface">
+                  <span class="font-label-md text-label-md uppercase tracking-widest text-primary-fixed">Excelência
+                    Médica</span>
+                  <span class="block font-headline-sm text-headline-sm mt-1">"Cada traço merece escuta, respeito e
+                    precisão cirúrgica."</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 08. Resultados / Galeria Ética -->
+      <section class="py-space-xl bg-surface-container-low" id="resultados">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Documentação Clínica</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+              Resultados que inspiram confiança.
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Apresentamos a sutileza das mudanças reais proporcionadas pelos nossos tratamentos faciais sob protocolo
+              fotográfico padronizado.
+            </p>
+          </div>
+          <!-- Comparison Cards Bento -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+            <!-- Case 1 -->
+            <div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between">
+              <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover"
+                  data-alt="Close-up clínico de contorno mandibular feminino sutilmente desenhado com ácido hialurônico, pele iluminada em luz natural neutra, fotografia médica profissional em tons champagne e neutros sem maquiagem"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WAwNjgSOiNiprIIxzQYVgGel8mIsHSVv1DlIJRWw1pqogP7yFWQ4Pgwbx-7sUwFu1IUzbQPvY1E9rRacMH165JYYVwiT1lqwrPtc7vLvM3CgDhjNNWDZv6Ohw9I7AjM-wMbLJOowcMpTiaXCIpmUegSgiYYa1Fes7I6GNbcA3aW1L5PEmihA5__5eBH-8szUDvxZN-IAXsHwxWEB8J-i0FM7AbOMH732DMLkV9zs0Q-IhmvVtCekXw" />
+                <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
+                  Antes &amp; Depois</div>
+              </div>
+              <div class="mt-4">
+                <span class="font-label-md text-label-md uppercase text-primary tracking-wider">Perfil
+                  Cervicofacial</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Definição Mandibular &amp; Mento</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Harmonização sutil do contorno sem
+                  aumento do volume lateral da face.</p>
+              </div>
+            </div>
+            <!-- Case 2 -->
+            <div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between">
+              <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover"
+                  data-alt="Registro fotográfico médico de rejuvenescimento da região periorbital e olheiras femininas com preenchimento biomédico sutil, olhar descansado e fresco em luz suave de consultório de luxo"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ITSHYpLlfcAZ3Sk8xOQTudtsu_38uf7H7eTNcox6OxllCtPBHYl9LzC7ceZnJpWkAoadJrJXuZYU7a3GEbxhtS7NyGWlKEBfz3pF86GZlfnv5a12DVSQ7jJs1PBR6iPKpKeRpnwXQCvFFzfImVDI3ZMNWtUtvZ_sgAXVvjLhgYY13qFl1nfqQwbfKpK0rmyZ8knNwMOQSnO5EmWpCtp2jYIIj-XXZ67yb6GVNONQNo-klzFiMud6ZQ" />
+                <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
+                  Pós 30 dias</div>
+              </div>
+              <div class="mt-4">
+                <span class="font-label-md text-label-md uppercase text-primary tracking-wider">Região
+                  Periorbital</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Suavização de Olheiras Profundas</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Transição suave entre pálpebra
+                  inferior e maçãs do rosto com atenuação de sombras.</p>
+              </div>
+            </div>
+            <!-- Case 3 -->
+            <div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between">
+              <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover"
+                  data-alt="Fotografia macro dermatológica de textura dérmica de bochecha feminina pós bioestimuladores de colágeno, demonstrando firmeza, viço e poros refinados sob iluminação clínica neutra"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAb3_CE9NbmBjhD81spf6XTjByCid-oETkKSSPSEZ0ul3U14S78xYtoM1K9leRkgGExHpeIXjCFwP5qYGq1clbGEseN5DMwQgi4L84Af5UtW1a-25v-2DMCjaHB9jV6xE22nqTP5aJskzzEP8PVZ6mN1_8twTIjvfW8defhWmso7Tu2p9_uJVI_otvBtbMGi-1eAdw5rq1cfsVWj4BQx8rc23be6ISgVVlGeZqAJVEACz3UdYOxfgYGw" />
+                <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
+                  Pós 60 dias</div>
+              </div>
+              <div class="mt-4">
+                <span class="font-label-md text-label-md uppercase text-primary tracking-wider">Bioestimulação</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Recuperação de Densidade Dérmica</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Melhora comprovada no tônus, viço e
+                  elasticidade natural das camadas profundas.</p>
+              </div>
+            </div>
+            <!-- Case 4 -->
+            <div class="bg-surface-container-lowest rounded p-space-md shadow-sm flex flex-col justify-between">
+              <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover"
+                  data-alt="Detalhe de lábios femininos hidratados e com contorno perfeitamente esculpido através de micro-gotas de ácido hialurônico, preservando anatomia natural sem aspecto artificial ou exagerado"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYulFnlNKHqetdyR835OvWicMz_TL3OfXkbBrNyyccsMjXykX-o9yLipZjPkNZqcxtBCYnKfGg2HYMP-lsB1Neq-bkZIa06aekAe1ipkG08ItwDcjtdOmfGGonlanFGrQhn2tSz_ynrWBAT52Qy8fhFHIFswcMcXTVjzqS0VHcc28VZwdHlKlX2mTatpa_8GpSGIcDdubs88erUaaMzVvUfrcPdd0gsN5Q4oNIgo10lDOIxMyanVWz5Q" />
+                <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
+                  Resultado Final</div>
+              </div>
+              <div class="mt-4">
+                <span class="font-label-md text-label-md uppercase text-primary tracking-wider">Volumetria Labial</span>
+                <h3 class="font-title-md text-title-md text-on-surface mt-1">Hidratação e Contorno de Lábios</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Desenho do arco do cupido e hidratação
+                  profunda respeitando proporções áureas.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Disclaimer Ético Obrigatório -->
+          <div class="mt-space-lg p-space-md bg-surface-container-highest/60 rounded text-center">
+            <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed max-w-4xl mx-auto italic">
+              *Aviso de Responsabilidade Médica: Em cumprimento às diretrizes éticas e sanitárias, esclarecemos que os
+              resultados ilustrados representam respostas clínicas individuais e dependem da anatomia, predisposição
+              metabólica e cuidados de cada paciente. Procedimentos estéticos exigem avaliação presencial prévia e não
+              configuram garantia de resultado padrão.*
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- 09. Depoimentos -->
+      <section class="py-space-xl bg-background" id="depoimentos">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-lg">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full text-on-surface-variant font-label-md text-label-md uppercase mb-space-xs">
+              <div class="flex text-primary">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+              </div>
+              <span>Google Reviews · 140+ avaliações 5.0</span>
+            </div>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface">
+              Experiências que falam por si.
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Histórias de quem encontrou na Harmônica o equilíbrio entre discrição, acolhimento e precisão técnica.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Review 1 -->
+            <div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="text-primary-container mb-4">
+                  <span class="material-symbols-outlined text-3xl">format_quote</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  "Tinha muito receio de ficar com o rosto artificial ou exagerado. A Dra. Carolina me escutou com uma
+                  paciência ímpar e fez um plano sutil com toxina e bioestimuladores. Meus amigos dizem que pareço mais
+                  descansada, sem ninguém notar intervenção alguma. Ambiente impecável em Caçapava!"
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+                <div>
+                  <span class="block font-title-md text-title-md text-on-surface">Helena Vasconcellos</span>
+                  <span class="font-body-sm text-body-sm text-outline">Empresária · Caçapava</span>
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+              </div>
+            </div>
+            <!-- Review 2 -->
+            <div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="text-primary-container mb-4">
+                  <span class="material-symbols-outlined text-3xl">format_quote</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  "A recepção te transporta para um spa de hotel 5 estrelas. Desde o café de boas-vindas até o
+                  pós-procedimento com mensagens diárias da equipe perguntando como eu estava. Fiz o contorno mandibular
+                  e o resultado ficou milimétrico. Zero dor durante a aplicação."
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+                <div>
+                  <span class="block font-title-md text-title-md text-on-surface">Dra. Beatriz Toledo</span>
+                  <span class="font-body-sm text-body-sm text-outline">Advogada · São José dos Campos</span>
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+              </div>
+            </div>
+            <!-- Review 3 -->
+            <div class="bg-surface-container-low p-space-lg rounded flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="text-primary-container mb-4">
+                  <span class="material-symbols-outlined text-3xl">format_quote</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                  "Sou extremamente exigente com tratamentos faciais. O atendimento individualizado e o cuidado em não
+                  aplicar produtos desnecessários me conquistaram de primeira. A clínica é uma joia de elegância no Vale
+                  do Paraíba. Recomendo de olhos fechados."
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-outline-variant/30 flex items-center justify-between">
+                <div>
+                  <span class="block font-title-md text-title-md text-on-surface">Mariana Guimarães</span>
+                  <span class="font-body-sm text-body-sm text-outline">Arquiteta · Taubaté</span>
+                </div>
+                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 10. Jornada da Paciente -->
+      <section class="py-space-xl bg-surface-container" id="jornada">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col items-center text-center max-w-xl mx-auto mb-space-lg">
+            <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Metodologia
+              Exclusiva</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+              A jornada da paciente
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Do primeiro contato à manutenção anual: um percurso estruturado com máxima discrição e amparo técnico.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter relative">
+            <!-- Step 1 -->
+            <div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary-container text-on-background flex items-center justify-center font-title-lg text-title-lg">1</span>
+                <span class="material-symbols-outlined text-primary text-xl">record_voice_over</span>
+              </div>
+              <h3 class="font-title-lg text-title-lg text-on-surface">Avaliação Presencial</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                Consulta clínica minuciosa com escuta qualificada dos seus anseios e análise detalhada da musculatura e
+                estrutura óssea.
+              </p>
+            </div>
+            <!-- Step 2 -->
+            <div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary-container text-on-background flex items-center justify-center font-title-lg text-title-lg">2</span>
+                <span class="material-symbols-outlined text-primary text-xl">architecture</span>
+              </div>
+              <h3 class="font-title-lg text-title-lg text-on-surface">Planejamento 3D</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                Elaboração de um plano personalizado por etapas conscientes, estabelecendo prioridades para harmonia sem
+                excessos.
+              </p>
+            </div>
+            <!-- Step 3 -->
+            <div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary-container text-on-background flex items-center justify-center font-title-lg text-title-lg">3</span>
+                <span class="material-symbols-outlined text-primary text-xl">medical_services</span>
+              </div>
+              <h3 class="font-title-lg text-title-lg text-on-surface">Execução Delicada</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                Aplicação em sala com rigor cirúrgico, anestesia local confortável e materiais estéreis de primeira
+                linha mundial.
+              </p>
+            </div>
+            <!-- Step 4 -->
+            <div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="w-10 h-10 rounded-full bg-primary-container text-on-background flex items-center justify-center font-title-lg text-title-lg">4</span>
+                <span class="material-symbols-outlined text-primary text-xl">published_with_changes</span>
+              </div>
+              <h3 class="font-title-lg text-title-lg text-on-surface">Acompanhamento Ativo</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+                Revisão presencial após 15 a 30 dias, fotos de controle de evolução e canal direto para tirar qualquer
+                dúvida pós-sessão.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 11. Blog / Conteúdo Educativo -->
+      <section class="py-space-xl bg-background" id="blog">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-sm">
+            <div>
+              <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Informação Médica
+                Consciente</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+                Conhecimento &amp; Bem-Estar
+              </h2>
+            </div>
+            <a class="font-label-lg text-label-lg text-primary uppercase tracking-wider hover:underline flex items-center gap-1"
+              href="#agendamento">
+              Ver todos os artigos →
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+            <!-- Post 1 -->
+            <article
+              class="bg-surface-container-lowest rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+              <div class="aspect-[16/10] overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  data-alt="Frascos de vidro minimalistas de bioestimuladores de colágeno e texturas de sérum em superfície de mármore travertino creme com luz de estúdio suave"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvNmK8pkEQBILOiZ-cvR3esix2EtICPJJODInkQDV7_sTCIyqHOERMfBO-8GmGJMfLvCnOYx2mvMMg8TmfHNzCG7QDn1gew7T74IZyw0PJiU5XAuqzDd2rOs_7aMWcb-TWpMwSDfI4Q2slEyHxUQlVmvteXpQ85pMXnBI2fdYXrPtV5gDO79qzKQHtwrtMSYb4LxqClHH_5N57VpkHdCfgvIjeXjEydO75iuSO4UmiMRLJlkngw1ENw" />
+              </div>
+              <div class="p-space-md flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="font-label-md text-label-md text-primary uppercase">Bioestimuladores</span>
+                    <span class="text-outline">·</span>
+                    <span class="font-body-sm text-body-sm text-outline">5 min de leitura</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Cuidados essenciais
+                    pós-bioestimuladores: como otimizar o colágeno</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                    Entenda a curva biológica de deposição das fibras e hábitos nutricionais que multiplicam seus
+                    efeitos na pele.
+                  </p>
+                </div>
+                <span class="mt-4 font-label-lg text-label-lg text-on-surface uppercase tracking-wider block">Ler artigo
+                  completo →</span>
+              </div>
+            </article>
+            <!-- Post 2 -->
+            <article
+              class="bg-surface-container-lowest rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+              <div class="aspect-[16/10] overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  data-alt="Mulher serena com expressão natural sorrindo levemente sem rugas de tensão, conceito de toxina botulínica preventiva em luz dourada de fim de tarde"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1edZcpWvDEqPJJgo369AJHnsUiP2XDb74Kij9SuussFhKNA3Qq_EzkZJHQUnvn34Ah8VJLJvxcEfGkiI_IlYJcCpZMR-yl1V9gS8d7Ngld8tnT310tVHWrviroETZKbgOog5VJlZqRA2JzsDub8GZ-VZAou8Fnw2wtKrpSmdrQlevTa6jxf8Qr0KzSMUwWyfBB0ugfv41EDXltZq6tawm6Xcz9xqicKqWXw9IhlFan4wh2iplGIeshw" />
+              </div>
+              <div class="p-space-md flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="font-label-md text-label-md text-primary uppercase">Mitos &amp; Verdades</span>
+                    <span class="text-outline">·</span>
+                    <span class="font-body-sm text-body-sm text-outline">4 min de leitura</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Toxina botulínica e naturalidade:
+                    derrubando os principais mitos</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                    Descubra por que a técnica moderna de 'Baby Botox' preserva suas emoções sem paralisar o rosto.
+                  </p>
+                </div>
+                <span class="mt-4 font-label-lg text-label-lg text-on-surface uppercase tracking-wider block">Ler artigo
+                  completo →</span>
+              </div>
+            </article>
+            <!-- Post 3 -->
+            <article
+              class="bg-surface-container-lowest rounded overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col">
+              <div class="aspect-[16/10] overflow-hidden bg-surface-container">
+                <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  data-alt="Ilustração sutil sobreposta com proporção áurea geométrica sobre linhas faciais elegantes de perfil feminino em fundo tom fendi e linho neutro"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn6a2l5Pojob_QKQWBDUmrbgaok41CDPejUxgc1Lb6XAreKNUyhLYgffompKICYTu5pwo2NeVMyV_NCuoBDu3WKXip1X-D_SY8iL5-G8HkYCXA3J65FdI0EBlOQaWrqGZpfEMzZnREojEzjfbnGK8Yr8nCeHT_Jn9NErWM_RDsywiMw8lSCKM6AlO1_0uiSboy61oWuxfx01_nr957QFg9zIMG_3Z8vl6NwjE-YCEEIbPXhaWxEQlYCw" />
+              </div>
+              <div class="p-space-md flex-1 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="font-label-md text-label-md text-primary uppercase">Harmonia Facial</span>
+                    <span class="text-outline">·</span>
+                    <span class="font-body-sm text-body-sm text-outline">6 min de leitura</span>
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">Como a proporção áurea guia o
+                    rejuvenescimento seguro</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+                    A matemática por trás do que o cérebro humano reconhece instintivamente como belo, saudável e
+                    harmonioso.
+                  </p>
+                </div>
+                <span class="mt-4 font-label-lg text-label-lg text-on-surface uppercase tracking-wider block">Ler artigo
+                  completo →</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- 12. FAQ (Perguntas Frequentes) -->
+      <section class="py-space-xl bg-surface-container-low" id="faq">
+        <div class="max-w-[860px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="flex flex-col items-center text-center mb-space-lg">
+            <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Esclarecimentos</span>
+            <h2 class="font-headline-lg text-headline-lg text-on-surface mt-space-xs">
+              Perguntas Frequentes
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-2">
+              Transparência total para você dar o próximo passo com serenidade.
+            </p>
+          </div>
+          <div class="flex flex-col gap-space-sm" id="faq-container">
+            <!-- FAQ 1 -->
+            <details
+              class="group bg-surface-container-lowest rounded p-space-md shadow-sm transition-all open:shadow-md cursor-pointer">
+              <summary class="flex items-center justify-between font-title-lg text-title-lg text-on-surface list-none">
+                <span>Como funciona a primeira consulta de avaliação?</span>
+                <span
+                  class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <div class="mt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                A consulta de avaliação presencial tem duração aproximada de 60 minutos. Realizamos uma anamnese
+                completa do seu histórico clínico, mapeamos os vetores faciais e conversamos detalhadamente sobre o que
+                você deseja valorizar. Apresentamos um cronograma sob medida, esclarecendo produtos indicados e
+                cronograma de sessões.
+              </div>
+            </details>
+            <!-- FAQ 2 -->
+            <details
+              class="group bg-surface-container-lowest rounded p-space-md shadow-sm transition-all open:shadow-md cursor-pointer">
+              <summary class="flex items-center justify-between font-title-lg text-title-lg text-on-surface list-none">
+                <span>Os procedimentos causam dor ou desconforto?</span>
+                <span
+                  class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <div class="mt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Nosso protocolo prioriza o conforto absoluto. Utilizamos pomadas anestésicas tópicas de formulação
+                magistral de alta potência e, para preenchimentos, cânulas de ponta atraumática associadas a anestésicos
+                locais incorporados ao próprio produto, garantindo uma experiência praticamente indolor.
+              </div>
+            </details>
+            <!-- FAQ 3 -->
+            <details
+              class="group bg-surface-container-lowest rounded p-space-md shadow-sm transition-all open:shadow-md cursor-pointer">
+              <summary class="flex items-center justify-between font-title-lg text-title-lg text-on-surface list-none">
+                <span>Em quanto tempo é possível notar os resultados?</span>
+                <span
+                  class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <div class="mt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Depende do protocolo: a toxina botulínica inicia ação entre 48 a 72 horas, com ápice em 14 dias. Os
+                preenchimentos de ácido hialurônico apresentam efeito mecânico imediato, assentando perfeitamente após
+                15 dias. Já os bioestimuladores apresentam evolução progressiva a partir do 30º dia, atingindo o pico
+                colágeno aos 90 dias.
+              </div>
+            </details>
+            <!-- FAQ 4 -->
+            <details
+              class="group bg-surface-container-lowest rounded p-space-md shadow-sm transition-all open:shadow-md cursor-pointer">
+              <summary class="flex items-center justify-between font-title-lg text-title-lg text-on-surface list-none">
+                <span>Onde a clínica está localizada em Caçapava?</span>
+                <span
+                  class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <div class="mt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Estamos situados no centro nobre de Caçapava, na Praça da Bandeira, 88 (também com fácil acesso pela Av.
+                Brasil), em edifício executivo com estacionamento conveniente, portaria com controle de acesso e total
+                privacidade para a sua chegada e saída.
+              </div>
+            </details>
+            <!-- FAQ 5 -->
+            <details
+              class="group bg-surface-container-lowest rounded p-space-md shadow-sm transition-all open:shadow-md cursor-pointer">
+              <summary class="flex items-center justify-between font-title-lg text-title-lg text-on-surface list-none">
+                <span>Como é feito o acompanhamento após a aplicação?</span>
+                <span
+                  class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <div class="mt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Após qualquer intervenção, você recebe uma cartilha personalizada de cuidados e nosso número de
+                atendimento emergencial exclusivo. Uma consulta presencial de retorno é agendada entre 15 e 30 dias para
+                checagem minuciosa de simetria e fotografias de registro.
+              </div>
+            </details>
+            <!-- FAQ 6 -->
+            <details
+              class="group bg-surface-container-lowest rounded p-space-md shadow-sm transition-all open:shadow-md cursor-pointer">
+              <summary class="flex items-center justify-between font-title-lg text-title-lg text-on-surface list-none">
+                <span>Quais são as formas e condições de pagamento disponíveis?</span>
+                <span
+                  class="material-symbols-outlined text-primary group-open:rotate-180 transition-transform">expand_more</span>
+              </summary>
+              <div class="mt-space-sm font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Oferecemos flexibilidade e transparência: parcelamento em até 10x sem juros nos principais cartões de
+                crédito, condições especiais para pagamentos via Pix ou transferência à vista, além de planos combinados
+                de tratamento para programas anuais de longevidade dérmica.
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- 13. CTA de Conversão Impactante -->
+      <section class="py-space-xl bg-on-background text-surface relative overflow-hidden" id="agendamento">
+        <!-- Ambient gold blurred light -->
+        <div
+          class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-container/20 blur-3xl pointer-events-none">
+        </div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-primary/20 blur-3xl pointer-events-none">
+        </div>
+        <div
+          class="relative z-10 max-w-[1280px] mx-auto px-margin-mobile lg:px-margin text-center flex flex-col items-center">
+          <div
+            class="w-12 h-12 rounded-full bg-primary-container/20 flex items-center justify-center text-primary-container mb-space-sm">
+            <span class="material-symbols-outlined text-2xl">spa</span>
+          </div>
+          <span class="font-label-md text-label-md text-primary-container uppercase tracking-widest">Seu Momento
+            Exclusivo</span>
+          <h2
+            class="font-headline-lg lg:font-display-lg text-headline-lg lg:text-display-lg text-surface max-w-3xl mt-space-xs leading-tight">
+            Pronta para começar sua jornada de harmonia?
+          </h2>
+          <p class="font-body-lg text-body-lg text-surface-variant/90 max-w-2xl mt-space-sm leading-relaxed">
+            Dê o primeiro passo para realçar sua melhor versão em um ambiente acolhedor, privativo e cientificamente
+            dedicado à sua beleza natural.
+          </p>
+          <!-- Action Buttons -->
+          <div class="mt-space-lg flex flex-col sm:flex-row items-center gap-space-sm w-full justify-center">
+            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 h-14 rounded bg-primary-container text-on-background font-label-lg text-label-lg uppercase tracking-wider hover:bg-surface transition-all duration-300 shadow-[0_8px_30px_rgba(198,168,125,0.3)]"
+              href="https://wa.me/5512997428810?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Harm%C3%B4nica."
+              target="_blank">
+              <span class="material-symbols-outlined text-2xl">chat</span>
+              Agendar Avaliação pelo WhatsApp
+            </a>
+            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 h-14 rounded bg-surface/10 hover:bg-surface/20 text-surface font-label-lg text-label-lg uppercase tracking-wider transition-colors"
+              href="tel:551236529100">
+              <span class="material-symbols-outlined text-xl">call</span>
+              Ligar na Recepção: (12) 3652-9100
+            </a>
+          </div>
+          <p class="font-body-sm text-body-sm text-surface-variant/60 mt-space-md">
+            Atendimento exclusivo com horário previamente reservado. Vagas semanais limitadas para garantir dedicação
+            plena.
+          </p>
+        </div>
+      </section>
+      <!-- 14. Contato & Localização -->
+      <section class="py-space-xl bg-background" id="contato">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <!-- Contact Information Details -->
+            <div class="lg:col-span-6 flex flex-col gap-space-sm">
+              <span class="font-label-md text-label-md uppercase text-primary tracking-widest">Presença ·
+                Caçapava</span>
+              <h2 class="font-headline-lg text-headline-lg text-on-surface leading-tight">
+                Venha nos visitar
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Um refúgio concebido para proporcionar privacidade, silêncio e calma no coração de Caçapava.
+              </p>
+              <div class="flex flex-col gap-space-sm mt-2">
+                <div class="flex items-start gap-3 p-space-sm bg-surface-container-low rounded">
+                  <span class="material-symbols-outlined text-primary text-2xl mt-0.5">location_on</span>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Endereço</strong>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Av. Brasil, 420 — Sala 804, Centro,
+                      Caçapava - SP</span>
+                    <span class="font-body-sm text-body-sm text-outline block mt-0.5">(Próximo à Praça da Bandeira · CEP
+                      12281-630)</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 p-space-sm bg-surface-container-low rounded">
+                  <span class="material-symbols-outlined text-primary text-2xl mt-0.5">phone_iphone</span>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Canais Diretos</strong>
+                    <span class="font-body-md text-body-md text-on-surface-variant">WhatsApp Oficial: (12)
+                      99742-8810</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant block">Recepção: (12)
+                      3652-9100</span>
+                    <span class="font-body-sm text-body-sm text-outline block mt-0.5">Email:
+                      contato@harmonicaestetica.com.br</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 p-space-sm bg-surface-container-low rounded">
+                  <span class="material-symbols-outlined text-primary text-2xl mt-0.5">schedule</span>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Horários de Atendimento</strong>
+                    <span class="font-body-md text-body-md text-on-surface-variant">Segunda a Sexta: 09h00 às
+                      19h00</span>
+                    <span class="font-body-md text-body-md text-on-surface-variant block">Sábados: 09h00 às 13h00</span>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3 p-space-sm bg-surface-container-low rounded">
+                  <span class="material-symbols-outlined text-primary text-2xl mt-0.5">photo_camera</span>
+                  <div>
+                    <strong class="font-title-md text-title-md text-on-surface block">Rede Social</strong>
+                    <a class="font-body-md text-body-md text-primary hover:underline"
+                      href="#contato">@harmonicaestetica</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Stylized Map View -->
+            <div class="lg:col-span-6 flex flex-col gap-space-sm">
+              <div
+                class="w-full h-96 rounded shadow-lg bg-cover bg-center relative overflow-hidden flex items-end p-space-md"
+                data-alt="Mapa cartográfico elegante e minimalista em tons fendi, areia e champagne indicando localização central na Praça da Bandeira em Caçapava SP"
+                data-location="Praça da Bandeira, Caçapava - SP"
+                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBP1aMgT5NabZFfAJ-jBv5IKCzHmMPEij_YZF2pEEZX5ubN8KiYEXpkJS-oZ2Xn4VF9EFIO8KmblZRUyZ31LTT7LSJc9A2RkU44-bwRr5NA3VRGEBMyolNqGy4Y5mqf4YWSie-dysdvqPyIZ1xTMc6XctWAd_njGfsSkUlSGcedHIqxFk51P0lNfwI2C2vvT2jkF37RgIyLE_6jiA02SqTGpuxYP3yq4emi_n1AKD3MP64p9oJgIxblYA');">
+                <div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent">
+                </div>
+                <div
+                  class="relative z-10 w-full flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-surface/95 backdrop-blur-md p-4 rounded text-on-surface shadow-xl">
+                  <div>
+                    <span class="font-title-md text-title-md block font-semibold">Harmônica Estética Avançada</span>
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Av. Brasil, 420 · Sala 804 ·
+                      Centro</span>
+                  </div>
+                  <a class="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded bg-on-surface text-surface hover:bg-primary transition-colors font-label-md text-label-md uppercase tracking-wider shrink-0"
+                    href="https://maps.google.com/?q=Praca+da+Bandeira+Cacapava+SP" target="_blank">
+                    <span class="material-symbols-outlined text-base">directions</span>
+                    Traçar Rota
+                  </a>
+                </div>
+              </div>
+              <div class="p-4 bg-surface-container rounded flex items-center justify-between text-on-surface-variant">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary">local_parking</span>
+                  <span class="font-body-sm text-body-sm">Estacionamento conveniado no próprio edifício com
+                    manobrista.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="w-full bg-surface-container-low text-on-surface-variant">
+    <div class="max-w-[1280px] mx-auto px-margin-mobile lg:px-margin pt-space-xl pb-space-lg">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter">
+        <div class="lg:col-span-4 flex flex-col items-start gap-space-sm">
+          <div class="flex items-center gap-space-sm"><svg class="h-8 w-auto flex-shrink-0" fill="none"
+              viewbox="0 0 48 58" xmlns="http://www.w3.org/2000/svg">
+              <path d="M28 14C22 14 18 19 18 25C18 33 30 37 30 45C30 50 25 54 19 54" stroke="#C6A87D"
+                stroke-linecap="round" stroke-width="2.5"></path>
+              <path d="M20 14C26 14 30 19 30 25C30 33 18 37 18 45C18 50 23 54 29 54" stroke="#24201E"
+                stroke-linecap="round" stroke-width="2.5"></path>
+              <circle cx="24" cy="9" fill="#C6A87D" r="2.5"></circle>
+            </svg>
+            <div class="flex flex-col"><span
+                class="font-headline-sm text-headline-sm text-on-surface">Harmônica</span><span
+                class="font-label-md text-label-md uppercase text-outline tracking-widest">Estética Avançada</span>
+            </div>
+          </div>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-space-xs">Clínica de excelência
+            dedicada à harmonização facial, dermatologia regenerativa e tratamentos de longevidade sob rigor médico e
+            sofisticação editorial.</p>
+          <div class="flex items-center gap-space-sm mt-space-sm"><a
+              class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors"
+              href="#contato"><span class="material-symbols-outlined text-[18px]">photo_camera</span></a><a
+              class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors"
+              href="#contato"><span class="material-symbols-outlined text-[18px]">videocam</span></a><a
+              class="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors"
+              href="https://wa.me/5512997428810" target="_blank"><span
+                class="material-symbols-outlined text-[18px]">chat</span></a></div>
+        </div>
+        <div class="lg:col-span-2 flex flex-col gap-space-xs"><span
+            class="font-title-md text-title-md text-on-surface mb-space-xs">Navegação</span><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+            href="#inicio">Início</a><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+            href="#sobre">A Harmônica</a><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+            href="#procedimentos">Procedimentos</a><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+            href="#especialista">Especialistas</a><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+            href="#resultados">Resultados</a><a
+            class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+            href="#depoimentos">Depoimentos</a></div>
+        <div class="lg:col-span-3 flex flex-col gap-space-xs"><span
+            class="font-title-md text-title-md text-on-surface mb-space-xs">Localização &amp; Contato</span>
+          <p class="font-body-md text-body-md text-on-surface-variant">Praça da Bandeira, 88 — Centro</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">Caçapava - SP, CEP 12281-630</p>
+          <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">Telefone: (12) 3652-9100</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">WhatsApp: (12) 99742-8810</p>
+          <p class="font-body-md text-body-md text-on-surface-variant">contato@harmonicaestetica.com.br</p>
+        </div>
+        <div class="lg:col-span-3 flex flex-col gap-space-xs"><span
+            class="font-title-md text-title-md text-on-surface mb-space-xs">Atendimento</span>
+          <div class="font-body-md text-body-md text-on-surface-variant flex justify-between"><span>Segunda à
+              Sexta</span><span>09h00 – 19h00</span></div>
+          <div class="font-body-md text-body-md text-on-surface-variant flex justify-between">
+            <span>Sábados</span><span>09h00 – 13h00</span></div>
+          <div class="font-body-md text-body-md text-on-surface-variant flex justify-between"><span>Domingos e
+              Feriados</span><span>Fechado</span></div>
+          <div class="mt-space-md p-space-sm bg-surface rounded"><span
+              class="font-label-md text-label-md text-primary uppercase block">Atendimento Exclusivo</span><span
+              class="font-body-sm text-body-sm text-on-surface-variant">Consultas e procedimentos com hora marcada para
+              garantir privacidade e conforto.</span></div>
+        </div>
+      </div>
+      <div class="mt-space-xl pt-space-lg bg-surface-container-high rounded p-space-md">
+        <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed text-justify"><strong>Aviso Legal
+            &amp; Ética Médica:</strong> De acordo com as resoluções vigentes dos conselhos regulamentadores da área de
+          saúde e estética biomédica/médica, os resultados de procedimentos invasivos e não-invasivos podem variar
+          substancialmente de acordo com características biológicas individuais, adesão aos cuidados pós-tratamento e
+          metabolismo de cada paciente. Fotografias de casos e resultados representam manifestações clínicas específicas
+          e não constituem garantia de resultado ou promessa de cura e perfeita simetria estética.</p>
+      </div>
+      <div
+        class="mt-space-lg pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm text-on-surface-variant">
+        <span class="font-body-sm text-body-sm">© 2025 Harmônica Estética Avançada. Todos os direitos reservados.
+          Caçapava, SP.</span>
+        <div class="flex items-center gap-space-md font-body-sm text-body-sm"><a
+            class="hover:text-on-surface transition-colors" href="#">Termos de Uso</a><a
+            class="hover:text-on-surface transition-colors" href="#">Política de Privacidade</a><a
+            class="hover:text-on-surface transition-colors" href="#">Responsável Técnico</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+  <script>
+      // Harmônica — header polish
+      (function () {
+        const header = document.querySelector('.hz-header');
+        if (!header) return;
+        const update = () => header.classList.toggle('hz-scrolled', window.scrollY > 18);
+        window.addEventListener('scroll', update, {passive: true}); update();
+      })();
+  </script>
+</body>
+
+</html>
