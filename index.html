@@ -279,9 +279,21 @@
       font: 400 11px/1.5 'Plus Jakarta Sans', sans-serif
     }
 
-    /* Hero refinement: no location/category badge */
-    #inicio {
-      scroll-margin-top: 86px
+    /* Offset for fixed header on all anchor targets */
+    #inicio,
+    #sobre,
+    #diferenciais,
+    #procedimentos,
+    #destaque,
+    #especialista,
+    #resultados,
+    #depoimentos,
+    #jornada,
+    #blog,
+    #faq,
+    #agendamento,
+    #contato {
+      scroll-margin-top: 90px;
     }
 
     @media(max-width:991.98px) {
@@ -339,6 +351,91 @@
 
     .hz-header.hz-scrolled {
       box-shadow: 0 8px 30px rgba(27, 28, 26, .07)
+    }
+
+    /* ── IntersectionObserver animations ── */
+    .hz-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.22, 1, .36, 1),
+                  transform .7s cubic-bezier(.22, 1, .36, 1);
+      will-change: opacity, transform;
+    }
+
+    .hz-reveal.hz-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hz-reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity .7s cubic-bezier(.22, 1, .36, 1),
+                  transform .7s cubic-bezier(.22, 1, .36, 1);
+      will-change: opacity, transform;
+    }
+
+    .hz-reveal-left.hz-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hz-reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity .7s cubic-bezier(.22, 1, .36, 1),
+                  transform .7s cubic-bezier(.22, 1, .36, 1);
+      will-change: opacity, transform;
+    }
+
+    .hz-reveal-right.hz-visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .hz-reveal-scale {
+      opacity: 0;
+      transform: scale(.96);
+      transition: opacity .65s cubic-bezier(.22, 1, .36, 1),
+                  transform .65s cubic-bezier(.22, 1, .36, 1);
+      will-change: opacity, transform;
+    }
+
+    .hz-reveal-scale.hz-visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Stagger delays via CSS custom property */
+    .hz-reveal[data-delay="1"],
+    .hz-reveal-left[data-delay="1"],
+    .hz-reveal-right[data-delay="1"],
+    .hz-reveal-scale[data-delay="1"] { transition-delay: .1s; }
+
+    .hz-reveal[data-delay="2"],
+    .hz-reveal-left[data-delay="2"],
+    .hz-reveal-right[data-delay="2"],
+    .hz-reveal-scale[data-delay="2"] { transition-delay: .2s; }
+
+    .hz-reveal[data-delay="3"],
+    .hz-reveal-left[data-delay="3"],
+    .hz-reveal-right[data-delay="3"],
+    .hz-reveal-scale[data-delay="3"] { transition-delay: .3s; }
+
+    .hz-reveal[data-delay="4"],
+    .hz-reveal-left[data-delay="4"],
+    .hz-reveal-right[data-delay="4"],
+    .hz-reveal-scale[data-delay="4"] { transition-delay: .4s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hz-reveal,
+      .hz-reveal-left,
+      .hz-reveal-right,
+      .hz-reveal-scale {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
     }
 
     /* Harmônica theme override: neutralize Bootstrap default blue links */
@@ -551,7 +648,7 @@
           <div
             class="aspect-video w-full bg-surface-container-high rounded overflow-hidden relative flex items-center justify-center">
             <img alt="Ambiente da Clínica Harmônica" class="w-full h-full object-cover opacity-75"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g" />
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g" / loading="lazy">
             <div
               class="absolute inset-0 bg-on-background/40 flex flex-col items-center justify-center gap-3 text-surface">
               <div
@@ -601,7 +698,7 @@
               <div class="relative overflow-hidden rounded shadow-xl aspect-[16/11]">
                 <img alt="Recepção refinada e acolhedora da Clínica Harmônica"
                   class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAW3j-slv8Je9OZ80JY4QJC_4cT5WVsi2ryHZaaL9ozbLaZeubUAav9UAngaVzm5OYCnNCUv6oLm2Mgg-gh1qj6bZGfW36Wq7l5e9A1lsts1I4qZ3bR4ZZEu4qWQLongC_F_f6tUAGpKPxu0xXGtHlq0MOfLp0OgXozhAcebt3Es596ZV_ZnTcmvJ3kgZxbRgqyeN9M0_sFzc02aMiu4rMwvlpG8lCtheGME7_X_WNU1gg6LtoflfQb-g" / loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-on-background/40 to-transparent"></div>
               </div>
               <div
@@ -868,7 +965,7 @@
             <div class="lg:col-span-6 relative min-h-[380px] lg:min-h-full">
               <img alt="Procedimento delicado e avaliação de contorno facial na clínica Harmônica"
                 class="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQK5My7gdIZjrDMx9mdc67mKrePPCqFWPGvtfJEKLXlgVK1nfqA_rdG-CviVF14DNYq6PwP4f4N0s-ih66yf9nN4Hjurjem4d9cJ_O9OqlohNjlffjgj2NAy0XPRj8HcY07qp4UYfIgVPpHxCbBvtMACZlEFxdWznZiG2rCG9v2xOf7uKQmyaeFidoHtkCiKIannbAbdJs7ww7KthIAcEaPed8eruF02H_bZHkefNRhimEI2Tc1aPrqw" />
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQK5My7gdIZjrDMx9mdc67mKrePPCqFWPGvtfJEKLXlgVK1nfqA_rdG-CviVF14DNYq6PwP4f4N0s-ih66yf9nN4Hjurjem4d9cJ_O9OqlohNjlffjgj2NAy0XPRj8HcY07qp4UYfIgVPpHxCbBvtMACZlEFxdWznZiG2rCG9v2xOf7uKQmyaeFidoHtkCiKIannbAbdJs7ww7KthIAcEaPed8eruF02H_bZHkefNRhimEI2Tc1aPrqw" / loading="lazy">
               <div class="absolute inset-0 bg-gradient-to-t from-on-background/30 via-transparent to-transparent"></div>
               <div
                 class="absolute bottom-6 left-6 px-4 py-2 bg-surface/90 backdrop-blur-md rounded text-on-surface font-body-sm text-body-sm">
@@ -985,7 +1082,7 @@
               <div class="relative w-full max-w-md aspect-[4/5] rounded overflow-hidden shadow-2xl">
                 <img alt="Dra. Carolina Meirelles examinando com espelho de mão o contorno da face na clínica"
                   class="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2AANCqoqrv8qSnIJOgUSo3AzqiKSeeGXPqA4RLAKsQ9JGrnaV-GxwvIDl5MOEguu8Ov2PGcfm-DK3abPIM6xRQYFeL8SrmtvmGgVJmow8t-tRPqrRSF-xo-ksol4E8UV6hWzyfiwrSTbf23YSH6GQtH8v6MOd_2uP-o4XA4mdObfvmiRITKeLIGpx8S-jfFM89MbVJD0N0ZgGn4dzAF478rnrmJQ0F11nV3eLOTRbKWaPhCuI9Nq_w" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO2AANCqoqrv8qSnIJOgUSo3AzqiKSeeGXPqA4RLAKsQ9JGrnaV-GxwvIDl5MOEguu8Ov2PGcfm-DK3abPIM6xRQYFeL8SrmtvmGgVJmow8t-tRPqrRSF-xo-ksol4E8UV6hWzyfiwrSTbf23YSH6GQtH8v6MOd_2uP-o4XA4mdObfvmiRITKeLIGpx8S-jfFM89MbVJD0N0ZgGn4dzAF478rnrmJQ0F11nV3eLOTRbKWaPhCuI9Nq_w" / loading="lazy">
                 <div class="absolute inset-0 bg-gradient-to-t from-on-background/50 via-transparent to-transparent">
                 </div>
                 <div class="absolute bottom-6 left-6 right-6 text-surface">
@@ -1019,7 +1116,7 @@
               <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover"
                   data-alt="Close-up clínico de contorno mandibular feminino sutilmente desenhado com ácido hialurônico, pele iluminada em luz natural neutra, fotografia médica profissional em tons champagne e neutros sem maquiagem"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WAwNjgSOiNiprIIxzQYVgGel8mIsHSVv1DlIJRWw1pqogP7yFWQ4Pgwbx-7sUwFu1IUzbQPvY1E9rRacMH165JYYVwiT1lqwrPtc7vLvM3CgDhjNNWDZv6Ohw9I7AjM-wMbLJOowcMpTiaXCIpmUegSgiYYa1Fes7I6GNbcA3aW1L5PEmihA5__5eBH-8szUDvxZN-IAXsHwxWEB8J-i0FM7AbOMH732DMLkV9zs0Q-IhmvVtCekXw" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WAwNjgSOiNiprIIxzQYVgGel8mIsHSVv1DlIJRWw1pqogP7yFWQ4Pgwbx-7sUwFu1IUzbQPvY1E9rRacMH165JYYVwiT1lqwrPtc7vLvM3CgDhjNNWDZv6Ohw9I7AjM-wMbLJOowcMpTiaXCIpmUegSgiYYa1Fes7I6GNbcA3aW1L5PEmihA5__5eBH-8szUDvxZN-IAXsHwxWEB8J-i0FM7AbOMH732DMLkV9zs0Q-IhmvVtCekXw" / loading="lazy">
                 <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
                   Antes &amp; Depois</div>
               </div>
@@ -1036,7 +1133,7 @@
               <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover"
                   data-alt="Registro fotográfico médico de rejuvenescimento da região periorbital e olheiras femininas com preenchimento biomédico sutil, olhar descansado e fresco em luz suave de consultório de luxo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ITSHYpLlfcAZ3Sk8xOQTudtsu_38uf7H7eTNcox6OxllCtPBHYl9LzC7ceZnJpWkAoadJrJXuZYU7a3GEbxhtS7NyGWlKEBfz3pF86GZlfnv5a12DVSQ7jJs1PBR6iPKpKeRpnwXQCvFFzfImVDI3ZMNWtUtvZ_sgAXVvjLhgYY13qFl1nfqQwbfKpK0rmyZ8knNwMOQSnO5EmWpCtp2jYIIj-XXZ67yb6GVNONQNo-klzFiMud6ZQ" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6ITSHYpLlfcAZ3Sk8xOQTudtsu_38uf7H7eTNcox6OxllCtPBHYl9LzC7ceZnJpWkAoadJrJXuZYU7a3GEbxhtS7NyGWlKEBfz3pF86GZlfnv5a12DVSQ7jJs1PBR6iPKpKeRpnwXQCvFFzfImVDI3ZMNWtUtvZ_sgAXVvjLhgYY13qFl1nfqQwbfKpK0rmyZ8knNwMOQSnO5EmWpCtp2jYIIj-XXZ67yb6GVNONQNo-klzFiMud6ZQ" / loading="lazy">
                 <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
                   Pós 30 dias</div>
               </div>
@@ -1053,7 +1150,7 @@
               <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover"
                   data-alt="Fotografia macro dermatológica de textura dérmica de bochecha feminina pós bioestimuladores de colágeno, demonstrando firmeza, viço e poros refinados sob iluminação clínica neutra"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAb3_CE9NbmBjhD81spf6XTjByCid-oETkKSSPSEZ0ul3U14S78xYtoM1K9leRkgGExHpeIXjCFwP5qYGq1clbGEseN5DMwQgi4L84Af5UtW1a-25v-2DMCjaHB9jV6xE22nqTP5aJskzzEP8PVZ6mN1_8twTIjvfW8defhWmso7Tu2p9_uJVI_otvBtbMGi-1eAdw5rq1cfsVWj4BQx8rc23be6ISgVVlGeZqAJVEACz3UdYOxfgYGw" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAb3_CE9NbmBjhD81spf6XTjByCid-oETkKSSPSEZ0ul3U14S78xYtoM1K9leRkgGExHpeIXjCFwP5qYGq1clbGEseN5DMwQgi4L84Af5UtW1a-25v-2DMCjaHB9jV6xE22nqTP5aJskzzEP8PVZ6mN1_8twTIjvfW8defhWmso7Tu2p9_uJVI_otvBtbMGi-1eAdw5rq1cfsVWj4BQx8rc23be6ISgVVlGeZqAJVEACz3UdYOxfgYGw" / loading="lazy">
                 <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
                   Pós 60 dias</div>
               </div>
@@ -1069,7 +1166,7 @@
               <div class="relative aspect-square rounded overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover"
                   data-alt="Detalhe de lábios femininos hidratados e com contorno perfeitamente esculpido através de micro-gotas de ácido hialurônico, preservando anatomia natural sem aspecto artificial ou exagerado"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYulFnlNKHqetdyR835OvWicMz_TL3OfXkbBrNyyccsMjXykX-o9yLipZjPkNZqcxtBCYnKfGg2HYMP-lsB1Neq-bkZIa06aekAe1ipkG08ItwDcjtdOmfGGonlanFGrQhn2tSz_ynrWBAT52Qy8fhFHIFswcMcXTVjzqS0VHcc28VZwdHlKlX2mTatpa_8GpSGIcDdubs88erUaaMzVvUfrcPdd0gsN5Q4oNIgo10lDOIxMyanVWz5Q" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYulFnlNKHqetdyR835OvWicMz_TL3OfXkbBrNyyccsMjXykX-o9yLipZjPkNZqcxtBCYnKfGg2HYMP-lsB1Neq-bkZIa06aekAe1ipkG08ItwDcjtdOmfGGonlanFGrQhn2tSz_ynrWBAT52Qy8fhFHIFswcMcXTVjzqS0VHcc28VZwdHlKlX2mTatpa_8GpSGIcDdubs88erUaaMzVvUfrcPdd0gsN5Q4oNIgo10lDOIxMyanVWz5Q" / loading="lazy">
                 <div class="absolute top-2 left-2 px-2 py-0.5 bg-on-background/70 text-surface text-label-md rounded">
                   Resultado Final</div>
               </div>
@@ -1270,7 +1367,7 @@
               <div class="aspect-[16/10] overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   data-alt="Frascos de vidro minimalistas de bioestimuladores de colágeno e texturas de sérum em superfície de mármore travertino creme com luz de estúdio suave"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvNmK8pkEQBILOiZ-cvR3esix2EtICPJJODInkQDV7_sTCIyqHOERMfBO-8GmGJMfLvCnOYx2mvMMg8TmfHNzCG7QDn1gew7T74IZyw0PJiU5XAuqzDd2rOs_7aMWcb-TWpMwSDfI4Q2slEyHxUQlVmvteXpQ85pMXnBI2fdYXrPtV5gDO79qzKQHtwrtMSYb4LxqClHH_5N57VpkHdCfgvIjeXjEydO75iuSO4UmiMRLJlkngw1ENw" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPvNmK8pkEQBILOiZ-cvR3esix2EtICPJJODInkQDV7_sTCIyqHOERMfBO-8GmGJMfLvCnOYx2mvMMg8TmfHNzCG7QDn1gew7T74IZyw0PJiU5XAuqzDd2rOs_7aMWcb-TWpMwSDfI4Q2slEyHxUQlVmvteXpQ85pMXnBI2fdYXrPtV5gDO79qzKQHtwrtMSYb4LxqClHH_5N57VpkHdCfgvIjeXjEydO75iuSO4UmiMRLJlkngw1ENw" / loading="lazy">
               </div>
               <div class="p-space-md flex-1 flex flex-col justify-between">
                 <div>
@@ -1296,7 +1393,7 @@
               <div class="aspect-[16/10] overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   data-alt="Mulher serena com expressão natural sorrindo levemente sem rugas de tensão, conceito de toxina botulínica preventiva em luz dourada de fim de tarde"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1edZcpWvDEqPJJgo369AJHnsUiP2XDb74Kij9SuussFhKNA3Qq_EzkZJHQUnvn34Ah8VJLJvxcEfGkiI_IlYJcCpZMR-yl1V9gS8d7Ngld8tnT310tVHWrviroETZKbgOog5VJlZqRA2JzsDub8GZ-VZAou8Fnw2wtKrpSmdrQlevTa6jxf8Qr0KzSMUwWyfBB0ugfv41EDXltZq6tawm6Xcz9xqicKqWXw9IhlFan4wh2iplGIeshw" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1edZcpWvDEqPJJgo369AJHnsUiP2XDb74Kij9SuussFhKNA3Qq_EzkZJHQUnvn34Ah8VJLJvxcEfGkiI_IlYJcCpZMR-yl1V9gS8d7Ngld8tnT310tVHWrviroETZKbgOog5VJlZqRA2JzsDub8GZ-VZAou8Fnw2wtKrpSmdrQlevTa6jxf8Qr0KzSMUwWyfBB0ugfv41EDXltZq6tawm6Xcz9xqicKqWXw9IhlFan4wh2iplGIeshw" / loading="lazy">
               </div>
               <div class="p-space-md flex-1 flex flex-col justify-between">
                 <div>
@@ -1321,7 +1418,7 @@
               <div class="aspect-[16/10] overflow-hidden bg-surface-container">
                 <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   data-alt="Ilustração sutil sobreposta com proporção áurea geométrica sobre linhas faciais elegantes de perfil feminino em fundo tom fendi e linho neutro"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn6a2l5Pojob_QKQWBDUmrbgaok41CDPejUxgc1Lb6XAreKNUyhLYgffompKICYTu5pwo2NeVMyV_NCuoBDu3WKXip1X-D_SY8iL5-G8HkYCXA3J65FdI0EBlOQaWrqGZpfEMzZnREojEzjfbnGK8Yr8nCeHT_Jn9NErWM_RDsywiMw8lSCKM6AlO1_0uiSboy61oWuxfx01_nr957QFg9zIMG_3Z8vl6NwjE-YCEEIbPXhaWxEQlYCw" />
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn6a2l5Pojob_QKQWBDUmrbgaok41CDPejUxgc1Lb6XAreKNUyhLYgffompKICYTu5pwo2NeVMyV_NCuoBDu3WKXip1X-D_SY8iL5-G8HkYCXA3J65FdI0EBlOQaWrqGZpfEMzZnREojEzjfbnGK8Yr8nCeHT_Jn9NErWM_RDsywiMw8lSCKM6AlO1_0uiSboy61oWuxfx01_nr957QFg9zIMG_3Z8vl6NwjE-YCEEIbPXhaWxEQlYCw" / loading="lazy">
               </div>
               <div class="p-space-md flex-1 flex flex-col justify-between">
                 <div>
@@ -1670,12 +1767,98 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
   <script>
-      // Harmônica — header polish
+      // Harmônica — header, menu nav & scroll animations
       (function () {
+        // Header shadow on scroll
         const header = document.querySelector('.hz-header');
-        if (!header) return;
-        const update = () => header.classList.toggle('hz-scrolled', window.scrollY > 18);
-        window.addEventListener('scroll', update, {passive: true}); update();
+        if (header) {
+          const update = () => header.classList.toggle('hz-scrolled', window.scrollY > 18);
+          window.addEventListener('scroll', update, { passive: true });
+          update();
+        }
+
+        // Fix: offcanvas links with data-bs-dismiss were not scrolling to anchors
+        document.querySelectorAll('.hz-offcanvas-nav a[href^="#"]').forEach(function (link) {
+          link.addEventListener('click', function (e) {
+            const hash = this.getAttribute('href');
+            if (!hash || hash === '#') return;
+            const target = document.querySelector(hash);
+            if (!target) return;
+
+            e.preventDefault();
+
+            const offcanvasEl = document.getElementById('hzOffcanvas');
+            const offcanvas = offcanvasEl && bootstrap.Offcanvas.getInstance(offcanvasEl);
+
+            const scrollToTarget = function () {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              history.replaceState(null, '', hash);
+            };
+
+            if (offcanvas && offcanvasEl.classList.contains('show')) {
+              offcanvasEl.addEventListener('hidden.bs.offcanvas', scrollToTarget, { once: true });
+              offcanvas.hide();
+            } else {
+              scrollToTarget();
+            }
+          });
+        });
+
+        // ── IntersectionObserver reveal animations ──
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        // Auto-mark common section blocks for reveal
+        const mark = (selector, cls, stagger) => {
+          document.querySelectorAll(selector).forEach((el, i) => {
+            if (el.classList.contains('hz-reveal') ||
+                el.classList.contains('hz-reveal-left') ||
+                el.classList.contains('hz-reveal-right') ||
+                el.classList.contains('hz-reveal-scale')) return;
+            el.classList.add(cls || 'hz-reveal');
+            if (stagger) el.setAttribute('data-delay', String((i % 4) + 1));
+          });
+        };
+
+        // Section titles & intro text
+        mark('section > div > div.flex.flex-col.items-center', 'hz-reveal');
+        mark('section > div > div.flex.flex-col.md\\:flex-row', 'hz-reveal');
+        mark('#sobre .lg\\:col-span-5', 'hz-reveal-left');
+        mark('#sobre .lg\\:col-span-7', 'hz-reveal-right');
+        mark('#especialista .lg\\:col-span-5', 'hz-reveal-left');
+        mark('#especialista .lg\\:col-span-7', 'hz-reveal-right');
+        mark('#destaque .lg\\:col-span-6', 'hz-reveal');
+        mark('#contato .lg\\:col-span-6', 'hz-reveal');
+
+        // Cards grids (staggered)
+        mark('#diferenciais .grid > div', 'hz-reveal', true);
+        mark('#procedimentos .grid > div', 'hz-reveal', true);
+        mark('#resultados .grid > div', 'hz-reveal-scale', true);
+        mark('#depoimentos .grid > div', 'hz-reveal', true);
+        mark('#jornada .grid > div', 'hz-reveal', true);
+        mark('#blog .grid > article', 'hz-reveal', true);
+        mark('#faq details', 'hz-reveal', true);
+
+        // CTA section
+        mark('#agendamento .relative.z-10', 'hz-reveal');
+
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('hz-visible');
+              observer.unobserve(entry.target); // animate once
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '0px 0px -8% 0px',
+          threshold: 0.12
+        });
+
+        document.querySelectorAll(
+          '.hz-reveal, .hz-reveal-left, .hz-reveal-right, .hz-reveal-scale'
+        ).forEach(function (el) {
+          observer.observe(el);
+        });
       })();
   </script>
 </body>
